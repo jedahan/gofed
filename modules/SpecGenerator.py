@@ -22,7 +22,7 @@ class SpecGenerator:
 		self.pkg_info = pkg_info
 
 	def generateHeaderEpilogue(self):
-		self.file.write("%if 0%{?fedora} || 0%{?rhel} == 6\n")
+		self.file.write("%if 0%{?fedora} || 0%{?rhel} == 6 || 0%{?centos} >= 7\n")
 		self.file.write("%global with_devel 1\n")
 		self.file.write("%global with_bundled 0\n")
 
